@@ -61,7 +61,8 @@ def takePhoto_action(sender):
         return
     if sender.superview.name == 'fuckupcolors':
         sender.superview['fuckUpSlider'].value = 0
-    sender.superview['imageview1'].image = from_norm_to_ui(ph)
+    sender.superview['imageview1'].image, buff = from_norm_to_ui(ph)
+    buff.close()
 
 
 @ui.in_background
@@ -80,8 +81,11 @@ def fuckUpSlider_action(sender):
     im = v['imageview1'].image
     if im is None:
         return
-    im_n = glitch.fuck_up_colors(from_ui_to_norm(im), n)
-    v['imageview1'].image=from_norm_to_ui(im_n)
+    im_n, buff1 = from_ui_to_norm(im)
+    im_n = glitch.fuck_up_colors(im_n, n)
+    v['imageview1'].image, buff2 = from_norm_to_ui(im_n)
+    buff1.close()
+    buff2.close()
 
 
 vMain = ui.load_view('main')
