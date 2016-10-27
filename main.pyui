@@ -17,7 +17,7 @@
         "attributes" : {
           "font_size" : 12,
           "tint_color" : "RGBA(0.471698,0.471698,0.471698,1.000000)",
-          "uuid" : "FACAAAB7-47E6-4D56-A3CD-91C724563050",
+          "title" : "import",
           "name" : "fromLibrary",
           "corner_radius" : 5,
           "border_color" : "RGBA(0.193396,0.193396,0.193396,1.000000)",
@@ -25,7 +25,7 @@
           "class" : "Button",
           "border_width" : 1,
           "frame" : "{{110, 234}, {80, 32}}",
-          "title" : "import"
+          "uuid" : "FACAAAB7-47E6-4D56-A3CD-91C724563050"
         },
         "frame" : "{{6, 29}, {64, 30}}",
         "selected" : false,
@@ -53,7 +53,7 @@
         "attributes" : {
           "font_size" : 15,
           "tint_color" : "RGBA(0.439216,0.439216,0.439216,1.000000)",
-          "uuid" : "87673BC2-C7A1-46EE-A06B-054B00C37E24",
+          "title" : "save",
           "name" : "saveLibrary",
           "corner_radius" : 5,
           "border_color" : "RGBA(0.192157,0.192157,0.192157,1.000000)",
@@ -61,7 +61,7 @@
           "class" : "Button",
           "border_width" : 1,
           "frame" : "{{110, 234}, {80, 32}}",
-          "title" : "save"
+          "uuid" : "87673BC2-C7A1-46EE-A06B-054B00C37E24"
         },
         "frame" : "{{244, 29}, {70, 30}}",
         "selected" : false,
@@ -74,7 +74,7 @@
         "attributes" : {
           "font_size" : 12,
           "tint_color" : "RGBA(0.470588,0.470588,0.470588,1.000000)",
-          "title" : "take",
+          "uuid" : "653B2F9D-5952-4936-B723-7BDA64AF9DF6",
           "name" : "takePhoto",
           "corner_radius" : 6,
           "border_width" : 1,
@@ -82,7 +82,7 @@
           "class" : "Button",
           "border_color" : "RGBA(0.192157,0.192157,0.192157,1.000000)",
           "frame" : "{{120, 234}, {80, 32}}",
-          "uuid" : "653B2F9D-5952-4936-B723-7BDA64AF9DF6"
+          "title" : "take"
         },
         "frame" : "{{78, 29}, {67, 30}}",
         "selected" : false,
@@ -112,12 +112,12 @@
             "attributes" : {
               "font_size" : 15,
               "tint_color" : "RGBA(0.831373,0.749020,1.000000,1.000000)",
-              "title" : "fuck up colors",
+              "uuid" : "D72166D8-CAD7-46A0-8AD4-034D94E2ED92",
               "name" : "fuckup",
               "action" : "fuckUp_load",
               "class" : "Button",
               "frame" : "{{185, 9}, {80, 32}}",
-              "uuid" : "D72166D8-CAD7-46A0-8AD4-034D94E2ED92"
+              "title" : "fuck up colors"
             },
             "frame" : "{{6, 6}, {106, 38}}",
             "selected" : true,
@@ -130,12 +130,12 @@
             "attributes" : {
               "font_size" : 15,
               "tint_color" : "RGBA(0.831373,0.749020,1.000000,1.000000)",
-              "title" : "shift",
+              "uuid" : "4ADC1E3E-43D2-4115-BD12-72E399AAB0CF",
               "name" : "glitch_shift",
               "action" : "shift_load",
               "class" : "Button",
               "frame" : "{{185, 9}, {80, 32}}",
-              "uuid" : "4ADC1E3E-43D2-4115-BD12-72E399AAB0CF"
+              "title" : "shift"
             },
             "frame" : "{{120, 6}, {66, 38}}",
             "selected" : false,
@@ -148,12 +148,12 @@
             "attributes" : {
               "font_size" : 15,
               "tint_color" : "RGBA(0.831373,0.749020,1.000000,1.000000)",
-              "title" : "coloring",
+              "uuid" : "A5FF95A4-A08A-485B-AEE2-30D7125D3DB5",
               "name" : "coloring",
               "action" : "coloring_load",
               "class" : "Button",
               "frame" : "{{185, 9}, {80, 32}}",
-              "uuid" : "A5FF95A4-A08A-485B-AEE2-30D7125D3DB5"
+              "title" : "coloring"
             },
             "frame" : "{{194, 6}, {80, 38}}",
             "selected" : false,
@@ -187,7 +187,7 @@
         "attributes" : {
           "font_size" : 12,
           "tint_color" : "RGBA(0.470588,0.470588,0.470588,1.000000)",
-          "uuid" : "653B2F9D-5952-4936-B723-7BDA64AF9DF6",
+          "title" : "exit",
           "name" : "exit",
           "corner_radius" : 6,
           "border_width" : 1,
@@ -195,7 +195,7 @@
           "class" : "Button",
           "border_color" : "RGBA(0.192157,0.192157,0.192157,1.000000)",
           "frame" : "{{120, 234}, {80, 32}}",
-          "title" : "exit"
+          "uuid" : "653B2F9D-5952-4936-B723-7BDA64AF9DF6"
         },
         "frame" : "{{153, 29}, {83, 30}}",
         "selected" : true,

@@ -20,18 +20,20 @@ def from_norm_to_ui(norm_im):
     buff = StringIO.StringIO()
     norm_im.save(buff, format='bmp')
     ui_im = ui.Image.from_data(buff.getvalue())
-    buff.close()
-    return ui_im
+    return ui_im, buff
 
 
 def from_ui_to_norm(ui_im):
-    return Image.open(ui_im.to_png())
+    buff=StringIO.StringIO(ui_im.to_png())
+    norm_im= Image.open(buff)
+    return norm_im, buff
 
 
 def fuckUp_load(sender):
     global v, vMain
-    if sender.superview['imageview1'].image is None:
-        hud_alert('No image loaded')
+    if vMain['imageview1'].image is None:
+        hud_alert('No image loaded', icon='error')
+        return 
     v = ui.load_view('fuckupcolors')
     v['imageview1'].image = vMain['imageview1'].image
     v.present('full_screen', animated=False, hide_title_bar=True)
@@ -46,7 +48,8 @@ def save_action(sender):
 
 def saveLibrary_action(sender):
     if sender.superview['imageview1'].image is None:
-        return
+        hud_alert('No image to save', icon='error')
+        return 
     photos.save_image(sender.superview['imageview1'].image)
     hud_alert('Saved')
 
