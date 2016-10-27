@@ -22,7 +22,7 @@
           "flex" : "WH"
         },
         "frame" : "{{6, 68}, {308, 452}}",
-        "selected" : false,
+        "selected" : true,
         "nodes" : [
 
         ]
@@ -31,16 +31,16 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
-          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
+          "title" : "ok",
           "name" : "save",
           "corner_radius" : 0,
           "border_width" : 0,
           "action" : "save_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "title" : "ok"
+          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
         },
-        "frame" : "{{6, 30}, {60, 30}}",
+        "frame" : "{{6, 30}, {70, 30}}",
         "selected" : false,
         "nodes" : [
 
@@ -50,15 +50,15 @@
         "class" : "Slider",
         "attributes" : {
           "flex" : "W",
-          "name" : "fuckUpSlider",
+          "name" : "shiftSlider",
           "value" : 0,
-          "action" : "fuckUpSlider_action",
+          "action" : "shiftSlider_action",
           "class" : "Slider",
           "frame" : "{{60, 233}, {200, 34}}",
           "uuid" : "718CBD3C-29D9-427C-8693-7BBEA3F63A3E"
         },
         "frame" : "{{6, 528}, {308, 34}}",
-        "selected" : true,
+        "selected" : false,
         "nodes" : [
 
         ]
@@ -86,16 +86,51 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
-          "title" : "cancel",
+          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
           "name" : "cancel",
           "corner_radius" : 0,
           "border_width" : 0,
           "action" : "cancel_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
+          "title" : "cancel"
         },
-        "frame" : "{{246, 30}, {68, 30}}",
+        "frame" : "{{245, 30}, {69, 30}}",
+        "selected" : false,
+        "nodes" : [
+
+        ]
+      },
+      {
+        "class" : "View",
+        "attributes" : {
+          "name" : "region",
+          "corner_radius" : 0,
+          "border_width" : 1,
+          "border_color" : "RGBA(0.132075,0.132075,0.132075,1.000000)",
+          "class" : "View",
+          "alpha" : 1,
+          "frame" : "{{110, 234}, {100, 100}}",
+          "custom_class" : "",
+          "uuid" : "74C97636-CB5D-4C44-8D6D-96BFEBE220CD"
+        },
+        "frame" : "{{6, 68}, {100, 100}}",
+        "selected" : false,
+        "nodes" : [
+
+        ]
+      },
+      {
+        "class" : "SegmentedControl",
+        "attributes" : {
+          "class" : "SegmentedControl",
+          "name" : "dirControl",
+          "frame" : "{{100, 270}, {120, 29}}",
+          "uuid" : "AF8A2446-00DE-4778-BA03-EC4EF7FF4323",
+          "segments" : "left|right",
+          "flex" : "LR"
+        },
+        "frame" : "{{106, 30}, {120, 30}}",
         "selected" : false,
         "nodes" : [
 

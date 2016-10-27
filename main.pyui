@@ -16,19 +16,19 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 12,
-          "tint_color" : "RGBA(0.471698,0.471698,0.471698,1.000000)",
-          "title" : "import",
+          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
+          "uuid" : "FACAAAB7-47E6-4D56-A3CD-91C724563050",
           "name" : "fromLibrary",
           "corner_radius" : 5,
-          "border_color" : "RGBA(0.193396,0.193396,0.193396,1.000000)",
+          "border_color" : "RGBA(0.800000,0.815686,0.843137,1.000000)",
           "action" : "fromLibrary_action",
           "class" : "Button",
           "border_width" : 1,
           "frame" : "{{110, 234}, {80, 32}}",
-          "uuid" : "FACAAAB7-47E6-4D56-A3CD-91C724563050"
+          "title" : "import"
         },
-        "frame" : "{{6, 29}, {64, 30}}",
-        "selected" : false,
+        "frame" : "{{6, 30}, {65, 30}}",
+        "selected" : true,
         "nodes" : [
 
         ]
@@ -42,28 +42,7 @@
           "frame" : "{{100, 200}, {100, 100}}",
           "flex" : "WH"
         },
-        "frame" : "{{6, 67}, {308, 437}}",
-        "selected" : false,
-        "nodes" : [
-
-        ]
-      },
-      {
-        "class" : "Button",
-        "attributes" : {
-          "font_size" : 15,
-          "tint_color" : "RGBA(0.439216,0.439216,0.439216,1.000000)",
-          "title" : "save",
-          "name" : "saveLibrary",
-          "corner_radius" : 5,
-          "border_color" : "RGBA(0.192157,0.192157,0.192157,1.000000)",
-          "action" : "saveLibrary_action",
-          "class" : "Button",
-          "border_width" : 1,
-          "frame" : "{{110, 234}, {80, 32}}",
-          "uuid" : "87673BC2-C7A1-46EE-A06B-054B00C37E24"
-        },
-        "frame" : "{{244, 29}, {70, 30}}",
+        "frame" : "{{6, 68}, {308, 441}}",
         "selected" : false,
         "nodes" : [
 
@@ -73,18 +52,39 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 12,
-          "tint_color" : "RGBA(0.470588,0.470588,0.470588,1.000000)",
-          "uuid" : "653B2F9D-5952-4936-B723-7BDA64AF9DF6",
+          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
+          "uuid" : "87673BC2-C7A1-46EE-A06B-054B00C37E24",
+          "name" : "saveLibrary",
+          "corner_radius" : 5,
+          "border_color" : "RGBA(0.800000,0.815686,0.843137,1.000000)",
+          "action" : "saveLibrary_action",
+          "class" : "Button",
+          "border_width" : 1,
+          "frame" : "{{110, 234}, {80, 32}}",
+          "title" : "save"
+        },
+        "frame" : "{{220, 30}, {94, 30}}",
+        "selected" : false,
+        "nodes" : [
+
+        ]
+      },
+      {
+        "class" : "Button",
+        "attributes" : {
+          "font_size" : 12,
+          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
+          "title" : "take",
           "name" : "takePhoto",
           "corner_radius" : 6,
           "border_width" : 1,
           "action" : "takePhoto_action",
           "class" : "Button",
-          "border_color" : "RGBA(0.192157,0.192157,0.192157,1.000000)",
+          "border_color" : "RGBA(0.800000,0.815686,0.843137,1.000000)",
           "frame" : "{{120, 234}, {80, 32}}",
-          "title" : "take"
+          "uuid" : "653B2F9D-5952-4936-B723-7BDA64AF9DF6"
         },
-        "frame" : "{{78, 29}, {67, 30}}",
+        "frame" : "{{79, 30}, {65, 30}}",
         "selected" : false,
         "nodes" : [
 
@@ -96,31 +96,31 @@
           "flex" : "W",
           "content_width" : 450,
           "name" : "scrollview1",
-          "content_height" : 50,
+          "content_height" : 45,
           "border_width" : 0,
-          "corner_radius" : 10,
+          "corner_radius" : 0,
           "class" : "ScrollView",
           "frame" : "{{0, 90}, {320, 320}}",
-          "background_color" : "RGBA(0.850000,0.900000,1.000000,1.000000)",
+          "background_color" : "RGBA(0.869340,0.869340,0.915094,1.000000)",
           "uuid" : "816422DE-BA99-4912-91E8-B967E9C340B0"
         },
-        "frame" : "{{6, 512}, {308, 50}}",
+        "frame" : "{{0, 517}, {320, 45}}",
         "selected" : false,
         "nodes" : [
           {
             "class" : "Button",
             "attributes" : {
               "font_size" : 15,
-              "tint_color" : "RGBA(0.831373,0.749020,1.000000,1.000000)",
-              "uuid" : "D72166D8-CAD7-46A0-8AD4-034D94E2ED92",
+              "tint_color" : "RGBA(0.596078,0.533333,0.713726,1.000000)",
+              "title" : "fuck up colors",
               "name" : "fuckup",
               "action" : "fuckUp_load",
               "class" : "Button",
               "frame" : "{{185, 9}, {80, 32}}",
-              "title" : "fuck up colors"
+              "uuid" : "D72166D8-CAD7-46A0-8AD4-034D94E2ED92"
             },
-            "frame" : "{{6, 6}, {106, 38}}",
-            "selected" : true,
+            "frame" : "{{6, 6}, {106, 35}}",
+            "selected" : false,
             "nodes" : [
 
             ]
@@ -129,15 +129,15 @@
             "class" : "Button",
             "attributes" : {
               "font_size" : 15,
-              "tint_color" : "RGBA(0.831373,0.749020,1.000000,1.000000)",
-              "uuid" : "4ADC1E3E-43D2-4115-BD12-72E399AAB0CF",
+              "tint_color" : "RGBA(0.596078,0.533333,0.713726,1.000000)",
+              "title" : "shift",
               "name" : "glitch_shift",
               "action" : "shift_load",
               "class" : "Button",
               "frame" : "{{185, 9}, {80, 32}}",
-              "title" : "shift"
+              "uuid" : "4ADC1E3E-43D2-4115-BD12-72E399AAB0CF"
             },
-            "frame" : "{{120, 6}, {66, 38}}",
+            "frame" : "{{120, 6}, {66, 35}}",
             "selected" : false,
             "nodes" : [
 
@@ -147,16 +147,16 @@
             "class" : "Button",
             "attributes" : {
               "font_size" : 15,
-              "tint_color" : "RGBA(0.831373,0.749020,1.000000,1.000000)",
-              "uuid" : "A5FF95A4-A08A-485B-AEE2-30D7125D3DB5",
+              "tint_color" : "RGBA(0.596078,0.533333,0.713726,1.000000)",
+              "title" : "coloring",
               "name" : "coloring",
               "action" : "coloring_load",
               "class" : "Button",
               "frame" : "{{185, 9}, {80, 32}}",
-              "title" : "coloring"
+              "uuid" : "A5FF95A4-A08A-485B-AEE2-30D7125D3DB5"
             },
-            "frame" : "{{194, 6}, {80, 38}}",
-            "selected" : false,
+            "frame" : "{{194, 6}, {80, 35}}",
+            "selected" : true,
             "nodes" : [
 
             ]
@@ -173,7 +173,7 @@
           "class" : "Label",
           "alignment" : "left",
           "frame" : "{{85, 274}, {150, 32}}",
-          "background_color" : "RGBA(0.700000,0.550000,1.000000,1.000000)",
+          "background_color" : "RGBA(1.000000,0.300000,1.000000,1.000000)",
           "uuid" : "7E35D0DB-EF21-4986-8B4F-5E3DAF2422D6"
         },
         "frame" : "{{0, 0}, {320, 20}}",
@@ -186,19 +186,19 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 12,
-          "tint_color" : "RGBA(0.470588,0.470588,0.470588,1.000000)",
-          "title" : "exit",
+          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
+          "uuid" : "653B2F9D-5952-4936-B723-7BDA64AF9DF6",
           "name" : "exit",
           "corner_radius" : 6,
           "border_width" : 1,
           "action" : "cancel_action",
           "class" : "Button",
-          "border_color" : "RGBA(0.192157,0.192157,0.192157,1.000000)",
+          "border_color" : "RGBA(0.800000,0.815686,0.843137,1.000000)",
           "frame" : "{{120, 234}, {80, 32}}",
-          "uuid" : "653B2F9D-5952-4936-B723-7BDA64AF9DF6"
+          "title" : "exit"
         },
-        "frame" : "{{153, 29}, {83, 30}}",
-        "selected" : true,
+        "frame" : "{{152, 30}, {60, 30}}",
+        "selected" : false,
         "nodes" : [
 
         ]

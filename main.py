@@ -42,6 +42,31 @@ def fuckUp_load(sender):
     v.present('full_screen', animated=False, hide_title_bar=True)
 
 
+def shift_load(sender):
+    global v, vMain, im, buff
+    if vMain['imageview1'].image is None:
+        hud_alert('No image loaded', icon='error')
+        return 
+    v = ui.load_view('shift')
+    im_n = vMain['imageview1'].image
+    v['imageview1'].image = im_n
+    im, buff = from_ui_to_norm(im_n)
+    #v['range'].transform=ui.Transform
+    v.present('full_screen', animated=False, hide_title_bar=True)
+    
+    
+def coloring_load(sender):
+    global v, vMain, im, buff
+    if vMain['imageview1'].image is None:
+        hud_alert('No image loaded', icon='error')
+        return 
+    v = ui.load_view('coloring')
+    im_n = vMain['imageview1'].image
+    v['imageview1'].image = im_n
+    im, buff = from_ui_to_norm(im_n)
+    v.present('full_screen', animated=False, hide_title_bar=True)
+
+
 def save_action(sender):
     v_im = sender.superview['imageview1'].image
     global vMain, v, im, buff
