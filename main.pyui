@@ -1,0 +1,112 @@
+[
+  {
+    "class" : "View",
+    "attributes" : {
+      "name" : "Glitch",
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "enabled" : true,
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "flex" : ""
+    },
+    "frame" : "{{0, 0}, {320, 500}}",
+    "selected" : false,
+    "nodes" : [
+      {
+        "class" : "Button",
+        "attributes" : {
+          "font_size" : 15,
+          "uuid" : "FACAAAB7-47E6-4D56-A3CD-91C724563050",
+          "tint_color" : "RGBA(0.471698,0.471698,0.471698,1.000000)",
+          "name" : "newImage",
+          "corner_radius" : 5,
+          "border_color" : "RGBA(0.193396,0.193396,0.193396,1.000000)",
+          "action" : "newImage_action",
+          "class" : "Button",
+          "border_width" : 1,
+          "frame" : "{{110, 234}, {80, 32}}",
+          "title" : "new"
+        },
+        "frame" : "{{6, 6}, {60, 30}}",
+        "selected" : false,
+        "nodes" : [
+
+        ]
+      },
+      {
+        "class" : "ImageView",
+        "attributes" : {
+          "class" : "ImageView",
+          "name" : "imageview1",
+          "uuid" : "40C39743-77E2-49FE-B8E0-955F0FC4C4D0",
+          "frame" : "{{100, 200}, {100, 100}}"
+        },
+        "frame" : "{{6, 43}, {308, 391}}",
+        "selected" : false,
+        "nodes" : [
+
+        ]
+      },
+      {
+        "class" : "Button",
+        "attributes" : {
+          "font_size" : 15,
+          "uuid" : "87673BC2-C7A1-46EE-A06B-054B00C37E24",
+          "tint_color" : "RGBA(0.439216,0.439216,0.439216,1.000000)",
+          "name" : "saveImage",
+          "corner_radius" : 5,
+          "border_color" : "RGBA(0.192157,0.192157,0.192157,1.000000)",
+          "action" : "saveImage_action",
+          "class" : "Button",
+          "border_width" : 1,
+          "frame" : "{{110, 234}, {80, 32}}",
+          "title" : "save"
+        },
+        "frame" : "{{253, 6}, {61, 29}}",
+        "selected" : false,
+        "nodes" : [
+
+        ]
+      },
+      {
+        "class" : "Button",
+        "attributes" : {
+          "font_size" : 15,
+          "title" : "take",
+          "tint_color" : "RGBA(0.470588,0.470588,0.470588,1.000000)",
+          "name" : "takePhoto",
+          "corner_radius" : 6,
+          "border_width" : 1,
+          "action" : "takePhoto_action",
+          "class" : "Button",
+          "border_color" : "RGBA(0.192157,0.192157,0.192157,1.000000)",
+          "frame" : "{{120, 234}, {80, 32}}",
+          "uuid" : "653B2F9D-5952-4936-B723-7BDA64AF9DF6"
+        },
+        "frame" : "{{74, 6}, {60, 30}}",
+        "selected" : false,
+        "nodes" : [
+
+        ]
+      },
+      {
+        "class" : "Slider",
+        "attributes" : {
+          "tint_color" : "RGBA(0.600000,1.000000,0.866667,1.000000)",
+          "flex" : "W",
+          "name" : "slider1",
+          "value" : 0,
+          "action" : "slider_action",
+          "class" : "Slider",
+          "frame" : "{{60, 233}, {200, 34}}",
+          "uuid" : "6C0B9C55-5C32-4CC6-9E32-7EF0DFD3C59F"
+        },
+        "frame" : "{{6, 442}, {308, 34}}",
+        "selected" : false,
+        "nodes" : [
+
+        ]
+      }
+    ]
+  }
+]
