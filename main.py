@@ -10,7 +10,8 @@ from copy import deepcopy
 
 v = None
 vMain = None
-
+im = None
+buff = None
 
 def cancel_action(sender):
     sender.superview.close()
@@ -30,19 +31,24 @@ def from_ui_to_norm(ui_im):
 
 
 def fuckUp_load(sender):
-    global v, vMain
+    global v, vMain, im, buff
     if vMain['imageview1'].image is None:
         hud_alert('No image loaded', icon='error')
         return 
     v = ui.load_view('fuckupcolors')
-    v['imageview1'].image = vMain['imageview1'].image
+    im_n = vMain['imageview1'].image
+    v['imageview1'].image = im_n
+    im, buff = from_ui_to_norm(im_n)
     v.present('full_screen', animated=False, hide_title_bar=True)
 
 
 def save_action(sender):
     v_im = sender.superview['imageview1'].image
-    global vMain
+    global vMain, v, im, buff
     vMain['imageview1'].image = v_im
+    del im
+    im = None
+    buff.close()
     sender.superview.close()
 
 
@@ -76,16 +82,12 @@ def fromLibrary_action(sender):
 
 
 def fuckUpSlider_action(sender):
+    global im
     v = sender.superview
     n = int(200 * numpy.log(1 + v['fuckUpSlider'].value)) + 1
-    im = v['imageview1'].image
-    if im is None:
-        return
-    im_n, buff1 = from_ui_to_norm(im)
-    im_n = glitch.fuck_up_colors(im_n, n)
-    v['imageview1'].image, buff2 = from_norm_to_ui(im_n)
-    buff1.close()
-    buff2.close()
+    im_n = glitch.fuck_up_colors(im, n)
+    v['imageview1'].image, buff = from_norm_to_ui(im_n)
+    buff.close()
 
 
 vMain = ui.load_view('main')
