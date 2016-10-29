@@ -132,13 +132,13 @@ def fuckUpSlider_action(sender):
 def shiftSlider_action(sender):
     global im
     v = sender.superview
-    xShift = int(0.5*im.size[0]*v['shiftSlider1'].value)
+    xShift = int(0.5*im.size[0]*v['shiftSlider2'].value)
     intens = v['shiftSlider1'].value
     region=v['view1']['region']
-    x0 = int(region.x) + 15
-    gl_widt = int(region.width) - 30
-    y0 = int(region.y) + 15
-    gl_heigth = int(region.height) - 30
+    x0 = (int(region.x) + 15)*im.size[0]/v['view1'].width
+    gl_widt = (int(region.width) - 30)*im.size[0]/v['view1'].width
+    y0 = (int(region.y) + 15)*im.size[0]/v['view1'].width
+    gl_heigth = (int(region.height) - 30) *im.size[0]/v['view1'].width
     dy = int(0.005 * im.size[1])
     if v['dirControl'].selected_index==0:
         for i in range(int(intens*100)):
@@ -150,7 +150,7 @@ def shiftSlider_action(sender):
             x = [rn.randint(x0, x0 + gl_widt) + dx, rn.randint(x0, x0 + gl_widt) + dx]
             y.append(y[0] + dy)
             x.sort()
-            glitch.glitch_shift(im, -rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
+            im_n=glitch.glitch_shift(im, -rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
     else:
         for i in range(int(intens*100)):
             y = [rn.randint(y0, y0 + gl_heigth - dy)]
@@ -161,8 +161,8 @@ def shiftSlider_action(sender):
             x = [rn.randint(x0, x0 + gl_widt) + dx, rn.randint(x0, x0 + gl_widt) + dx]
             y.append(y[0] + dy)
             x.sort()
-            glitch.glitch_shift(im, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
-    v['view1']['imageview1'].image, buff = from_norm_to_ui(im)
+            im_n=glitch.glitch_shift(im, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
+    v['view1']['imageview1'].image, buff = from_norm_to_ui(im_n)
     buff.close()
 
 
