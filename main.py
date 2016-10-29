@@ -60,7 +60,7 @@ def shiftSlider_action(sender):
     dy = int(0.0025 * im.size[1])
     im_n=im.copy()
     if v['dirControl'].selected_index==0:
-        for i in range(int(intens*100)):
+        for i in range(int(intens*300)):
             y = [rn.randint(y0, y0 + gl_heigth - dy)]
             if y[0] - y0 < gl_heigth / 2:
                 dx = int(numpy.sqrt(gl_heigth*xShift*(y[0] - y0)/im.size[1]))
@@ -71,13 +71,13 @@ def shiftSlider_action(sender):
             x.sort()
             glitch.glitch_shift_left(im_n, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
     else:
-        for i in range(int(intens*100)):
+        for i in range(int(intens*300)):
             y = [rn.randint(y0, y0 + gl_heigth - dy)]
             if y[0] - y0 < gl_heigth / 2:
                 dx = int(numpy.sqrt(gl_heigth*xShift*(y[0] - y0)/im.size[1]))
             else:
                 dx = int(numpy.sqrt(gl_heigth*xShift*(y0 + gl_heigth - y[0])/im.size[1]))
-            x = [x0 + dx, rn.randint(x0, x0 + gl_widt) + dx]
+            x = [min(im.size[0], x0 + dx), min(im.size[0], rn.randint(x0, x0 + gl_widt) + dx)]
             y.append(y[0] + dy)
             x.sort()
             glitch.glitch_shift_right(im_n, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
