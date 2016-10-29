@@ -1,7 +1,4 @@
 # coding: utf-8
-from copy import deepcopy
-
-
 def glitch_color(self, delta_x, delta_y, delta_z, min_x, min_y, max_x, max_y):
     if min_x < 0 or min_x > self.size[0]:
         raise ValueError('bad min of x: %f'%min_x)
@@ -41,12 +38,10 @@ def glitch_shift(self, delta_x, min_x, min_y, max_x, max_y):
         raise ValueError('bad max of y: %f'%max_y)
     if min_x == max_x or min_y == max_y:
         return
-    n_im=deepcopy(self)
     buff = self.crop((min_x, min_y, max_x, max_y))
-    n_im.paste(buff, (min_x+delta_x, min_y, max_x+delta_x, max_y))
+    self.paste(buff, (min_x+delta_x, min_y, max_x+delta_x, max_y))
     for y in range(min_y, max_y, 1):
-        n_im.paste(buff.getpixel((0, y - min_y)), (min_x, y, min_x + delta_x, y + 1))
-    return n_im
+        self.paste(buff.getpixel((0, y - min_y)), (min_x, y, min_x + delta_x, y + 1))
 
 
 
