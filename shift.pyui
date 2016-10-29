@@ -16,14 +16,14 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
-          "title" : "ok",
+          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
           "name" : "save",
           "corner_radius" : 0,
           "border_width" : 0,
           "action" : "save_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
+          "title" : "ok"
         },
         "frame" : "{{6, 30}, {70, 30}}",
         "selected" : false,
@@ -71,14 +71,14 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
-          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
+          "title" : "cancel",
           "name" : "cancel",
           "corner_radius" : 0,
           "border_width" : 0,
           "action" : "cancel_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "title" : "cancel"
+          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
         },
         "frame" : "{{245, 30}, {69, 30}}",
         "selected" : false,
@@ -128,7 +128,7 @@
           "frame" : "{{110, 234}, {100, 100}}"
         },
         "frame" : "{{6, 68}, {308, 410}}",
-        "selected" : false,
+        "selected" : true,
         "nodes" : [
           {
             "class" : "ImageView",
@@ -175,7 +175,7 @@
                   "uuid" : "C034C870-9429-4568-8FB1-67BB3DA4913F"
                 },
                 "frame" : "{{15, 16}, {70, 67}}",
-                "selected" : true,
+                "selected" : false,
                 "nodes" : [
 
                 ]
