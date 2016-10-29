@@ -149,26 +149,26 @@ def shiftSlider_action(sender):
         for i in range(int(intens*100)):
             y = [rn.randint(y0, y0 + gl_heigth - dy)]
             if y[0] - y0 < gl_heigth / 2:
-                dx = int(0.5 * (y0 + gl_heigth - y[0]))
+                dx = int(numpy.sqrt(y0 + gl_heigth - y0) / gl_heigth) * xShift
             else:
-                dx = int(0.5 * (y[0] - y0))
-            x = [rn.randint(x0, x0 + gl_widt) + dx, rn.randint(x0, x0 + gl_widt) + dx]
+                dx = int(numpy.sqrt(y[0] - y0) / gl_heigth) * xShift
+            x = [rn.randint(x0, x0 + gl_widt) - dx, rn.randint(x0, x0 + gl_widt) - dx]
             y.append(y[0] + dy)
             x.sort()
-            glitch.glitch_shift(im_n, -rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
+            glitch.glitch_shift_left(im_n, -rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
     else:
         for i in range(int(intens*100)):
             y = [rn.randint(y0, y0 + gl_heigth - dy)]
             if y[0] - y0 < gl_heigth / 2:
-                dx = int(numpy.sqrt(y0 + gl_heigth - y[0]))
+                dx = int(numpy.sqrt(y[0] - y0)/gl_heigth)*xShift
             else:
-                dx = int(numpy.sqrt(y[0] - y0))
+                dx = int(numpy.sqrt(y0 + gl_heigth - y0)/gl_heigth)*xShift
             x = [rn.randint(x0, x0 + gl_widt) + dx, rn.randint(x0, x0 + gl_widt) + dx]
             y.append(y[0] + dy)
             x.sort()
             print im.size
             print x, y
-            glitch.glitch_shift(im_n, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
+            glitch.glitch_shift_right(im_n, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
     v['view1']['imageview1'].image, buff = from_norm_to_ui(im_n)
     buff.close()
 
