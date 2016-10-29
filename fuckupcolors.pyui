@@ -2,7 +2,7 @@
   {
     "class" : "View",
     "attributes" : {
-      "name" : "Glitch",
+      "name" : "fuckupcolors",
       "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
       "enabled" : true,
@@ -31,14 +31,14 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
-          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
+          "title" : "ok",
           "name" : "save",
           "corner_radius" : 0,
           "border_width" : 0,
           "action" : "save_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "title" : "ok"
+          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
         },
         "frame" : "{{6, 30}, {60, 30}}",
         "selected" : false,
@@ -86,14 +86,14 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
-          "title" : "cancel",
+          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
           "name" : "cancel",
           "corner_radius" : 0,
           "border_width" : 0,
           "action" : "cancel_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
+          "title" : "cancel"
         },
         "frame" : "{{246, 30}, {68, 30}}",
         "selected" : false,

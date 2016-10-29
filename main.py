@@ -83,7 +83,10 @@ def coloring_load(sender):
 
 
 def save_action(sender):
-    v_im = sender.superview['imageview1'].image
+    if sender.superview.name == 'shift':
+        v_im = sender.superview['view1']['imageview1'].image
+    else:
+        v_im = sender.superview['imageview1'].image
     global vMain, v, im, buff
     vMain['imageview1'].image = v_im
     del im
@@ -133,7 +136,7 @@ def fuckUpSlider_action(sender):
 def shiftSlider_action(sender):
     global im
     v = sender.superview
-    xShift = int(0.2*im.size[0]*v['shiftSlider2'].value)
+    xShift = int(0.3*im.size[0]*v['shiftSlider2'].value)
     intens = v['shiftSlider1'].value
     if intens==0.:
         return 
@@ -142,7 +145,7 @@ def shiftSlider_action(sender):
     gl_widt = int((region.width - 30)*im.size[0]/v['view1'].width)
     y0 = int((region.y + 15)*im.size[1]/v['view1'].height)
     gl_heigth = int((region.height - 30) *im.size[1]/v['view1'].height)
-    dy = int(0.005 * im.size[1])
+    dy = int(0.0025 * im.size[1])
     im_n=im.copy()
     if v['dirControl'].selected_index==0:
         for i in range(int(intens*100)):
@@ -159,10 +162,10 @@ def shiftSlider_action(sender):
         for i in range(int(intens*100)):
             y = [rn.randint(y0, y0 + gl_heigth - dy)]
             if y[0] - y0 < gl_heigth / 2:
-                dx = int(numpy.sqrt((y[0] - y0)/gl_heigth*xShift))
+                dx = int(numpy.sqrt(gl_heigth*xShift*(y[0] - y0)/im.size[1]))
             else:
-                dx = int(numpy.sqrt((y0 + gl_heigth - y[0])/gl_heigth*xShift))
-            x = [rn.randint(x0, x0 + gl_widt) + dx, rn.randint(x0, x0 + gl_widt) + dx]
+                dx = int(numpy.sqrt(gl_heigth*xShift*(y0 + gl_heigth - y[0])/im.size[1]))
+            x = [x0 + dx, rn.randint(x0, x0 + gl_widt) + dx]
             y.append(y[0] + dy)
             x.sort()
             glitch.glitch_shift_right(im_n, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
