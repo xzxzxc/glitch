@@ -45,6 +45,46 @@ def from_ui_to_norm(ui_im):
     return norm_im, buff
 
 
+def shiftSlider_action(sender):
+    global im
+    v = sender.superview
+    xShift = int(0.3*im.size[0]*v['shiftSlider2'].value)
+    intens = v['shiftSlider1'].value
+    if intens==0.:
+        return 
+    region=v['view1']['region']
+    x0 = int((region.x + 15)*im.size[0]/v['view1'].width)
+    gl_widt = int((region.width - 30)*im.size[0]/v['view1'].width)
+    y0 = int((region.y + 15)*im.size[1]/v['view1'].height)
+    gl_heigth = int((region.height - 30) *im.size[1]/v['view1'].height)
+    dy = int(0.0025 * im.size[1])
+    im_n=im.copy()
+    if v['dirControl'].selected_index==0:
+        for i in range(int(intens*100)):
+            y = [rn.randint(y0, y0 + gl_heigth - dy)]
+            if y[0] - y0 < gl_heigth / 2:
+                dx = int(numpy.sqrt(gl_heigth*xShift*(y[0] - y0)/im.size[1]))
+            else:
+                dx = int(numpy.sqrt(gl_heigth*xShift*(y0 + gl_heigth - y[0])/im.size[1]))
+            x = [max(0, rn.randint(x0, x0 + gl_widt) - dx), max(0, x0 + gl_widt - dx)]
+            y.append(y[0] + dy)
+            x.sort()
+            glitch.glitch_shift_left(im_n, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
+    else:
+        for i in range(int(intens*100)):
+            y = [rn.randint(y0, y0 + gl_heigth - dy)]
+            if y[0] - y0 < gl_heigth / 2:
+                dx = int(numpy.sqrt(gl_heigth*xShift*(y[0] - y0)/im.size[1]))
+            else:
+                dx = int(numpy.sqrt(gl_heigth*xShift*(y0 + gl_heigth - y[0])/im.size[1]))
+            x = [x0 + dx, rn.randint(x0, x0 + gl_widt) + dx]
+            y.append(y[0] + dy)
+            x.sort()
+            glitch.glitch_shift_right(im_n, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
+    v['view1']['imageview1'].image, buff = from_norm_to_ui(im_n)
+    buff.close()
+
+
 def fuckUp_load(sender):
     global v, vMain, im, buff
     if vMain['imageview1'].image is None:
@@ -67,6 +107,7 @@ def shift_load(sender):
     v['view1']['imageview1'].image = im_n
     im, buff = from_ui_to_norm(im_n)
     rn.seed()
+    v['dirControl'].action=shiftSlider_action
     v.present('full_screen', animated=False, hide_title_bar=True)
     
     
@@ -139,45 +180,6 @@ def fuckUpSlider_action(sender):
     v['imageview1'].image, buff = from_norm_to_ui(im_n)
     buff.close()
 
-
-def shiftSlider_action(sender):
-    global im
-    v = sender.superview
-    xShift = int(0.3*im.size[0]*v['shiftSlider2'].value)
-    intens = v['shiftSlider1'].value
-    if intens==0.:
-        return 
-    region=v['view1']['region']
-    x0 = int((region.x + 15)*im.size[0]/v['view1'].width)
-    gl_widt = int((region.width - 30)*im.size[0]/v['view1'].width)
-    y0 = int((region.y + 15)*im.size[1]/v['view1'].height)
-    gl_heigth = int((region.height - 30) *im.size[1]/v['view1'].height)
-    dy = int(0.0025 * im.size[1])
-    im_n=im.copy()
-    if v['dirControl'].selected_index==0:
-        for i in range(int(intens*100)):
-            y = [rn.randint(y0, y0 + gl_heigth - dy)]
-            if y[0] - y0 < gl_heigth / 2:
-                dx = int(numpy.sqrt(gl_heigth*xShift*(y0 + gl_heigth - y[0])/im.size[1]))
-            else:
-                dx = int(numpy.sqrt(gl_heigth*xShift*(y[0] - y0)/im.size[1]))
-            x = [rn.randint(x0, x0 + gl_widt) - dx, rn.randint(x0, x0 + gl_widt) - dx]
-            y.append(y[0] + dy)
-            x.sort()
-            glitch.glitch_shift_left(im_n, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
-    else:
-        for i in range(int(intens*100)):
-            y = [rn.randint(y0, y0 + gl_heigth - dy)]
-            if y[0] - y0 < gl_heigth / 2:
-                dx = int(numpy.sqrt(gl_heigth*xShift*(y[0] - y0)/im.size[1]))
-            else:
-                dx = int(numpy.sqrt(gl_heigth*xShift*(y0 + gl_heigth - y[0])/im.size[1]))
-            x = [x0 + dx, rn.randint(x0, x0 + gl_widt) + dx]
-            y.append(y[0] + dy)
-            x.sort()
-            glitch.glitch_shift_right(im_n, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
-    v['view1']['imageview1'].image, buff = from_norm_to_ui(im_n)
-    buff.close()
 
 
 vMain = ui.load_view('main')
