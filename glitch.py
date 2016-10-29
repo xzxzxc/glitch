@@ -36,10 +36,9 @@ def glitch_shift_right(self, delta_x, min_x, min_y, max_x, max_y):
         raise ValueError('bad min of y: %f'%min_y)
     if max_y < 0 or max_y > self.size[1]:
         raise ValueError('bad max of y: %f'%max_y)
-    if min_x == max_x:
+    if min_x == max_x or min_y == max_y:
         return
     buff = self.crop((min_x, min_y, max_x, max_y))
-    # print buff.size
     self.paste(buff, (min_x+delta_x, min_y, max_x+delta_x, max_y))
     for y in range(min_y, max_y, 1):
         self.paste(buff.getpixel((0, y - min_y)), (min_x, y, min_x + delta_x, y + 1))
