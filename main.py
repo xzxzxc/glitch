@@ -11,7 +11,6 @@ import overlay
 from mrView import mrRectView
 import random as rn
 
-rn.seed()
 v = None
 vMain = None
 im = None
@@ -66,6 +65,7 @@ def shift_load(sender):
     im_n = vMain['imageview1'].image
     v['view1']['imageview1'].image = im_n
     im, buff = from_ui_to_norm(im_n)
+    rn.seed()
     v.present('full_screen', animated=False, hide_title_bar=True)
     
     
@@ -132,15 +132,36 @@ def fuckUpSlider_action(sender):
 def shiftSlider_action(sender):
     global im
     v = sender.superview
-    dx = v['shiftSlider1'].value
+    xShift = int(0.5*im.size[0]*v['shiftSlider1'].value)
     intens = v['shiftSlider1'].value
     regFrame=v['view1']['region'].frame
-    xMin = int(regFrame)
+    x0 = int(regFrame[0]) + 15
+    gl_widt = int(regFrame[2]) - 30
+    y0 = int(regFrame[1]) + 15
+    gl_heigth = int(regFrame[3]) - 30
+    dy = int(0.005 * im.size[1])
     if v['dirControl'].selected_index==0:
-        glitch.glitch_shift_right(12)
+        for i in range(int(intens*100)):
+            y = [rn.randint(y0, y0 + gl_heigth - dy)]
+            if y[0] - y0 < gl_heigth / 2:
+                dx = int(0.5 * (y0 + gl_heigth - y[0]))
+            else:
+                dx = int(0.5 * (y[0] - y0))
+            x = [rn.randint(x0, x0 + gl_widt) + dx, rn.randint(x0, x0 + gl_widt) + dx]
+            y.append(y[0] + dy)
+            x.sort()
+            glitch.glitch_shift(im, -rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
     else:
         for i in range(int(intens*100)):
-            glitch.glitch_shift_right(im, int(100*dx),regFrame[0]+15, regFrame[1]+15, regFrame[0]+regFrame[2]-15, regFrame[1]+regFrame[3]-15)
+            y = [rn.randint(y0, y0 + gl_heigth - dy)]
+            if y[0] - y0 < gl_heigth / 2:
+                dx = int(0.5 * (y0 + gl_heigth - y[0]))
+            else:
+                dx = int(0.5 * (y[0] - y0))
+            x = [rn.randint(x0, x0 + gl_widt) + dx, rn.randint(x0, x0 + gl_widt) + dx]
+            y.append(y[0] + dy)
+            x.sort()
+            glitch.glitch_shift(im, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
     v['view1']['imageview1'].image, buff = from_norm_to_ui(im)
     buff.close()
 

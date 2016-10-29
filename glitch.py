@@ -27,7 +27,7 @@ def glitch_blue(self, delta_x, min_x, min_y, max_x, max_y):
     glitch_color(self, 0, 0, delta_x, min_x, min_y, max_x, max_y)
 
 
-def glitch_shift_right(self, delta_x, min_x, min_y, max_x, max_y):
+def glitch_shift(self, delta_x, min_x, min_y, max_x, max_y):
     if min_x < 0 or min_x > self.size[0]:
         raise ValueError('bad min of x: %f'%min_x)
     if max_x < 0 or max_x > self.size[0]:

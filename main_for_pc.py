@@ -29,13 +29,13 @@ for i in xrange(500):
     x.sort()
     if i % 3 == 0:
         glitch_red(n, r.randint(-5, 5), x[0], y[0], x[1], y[1])
-        glitch_shift_right(n, r.randrange(25), x[0], y[0], x[1], y[1])
+        glitch_shift(n, r.randrange(25), x[0], y[0], x[1], y[1])
     elif i % 2 == 0:
         glitch_blue(n, r.randint(-25, 25), x[0], y[0], x[1], y[1])
-        glitch_shift_right(n, r.randrange(15), x[0], y[0], x[1], y[1])
+        glitch_shift(n, r.randrange(15), x[0], y[0], x[1], y[1])
     else:
         glitch_green(n, r.randint(-5, 5), x[0], y[0], x[1], y[1])
-        glitch_shift_right(n, r.randrange(5), x[0], y[0], x[1], y[1])
+        glitch_shift(n, r.randrange(5), x[0], y[0], x[1], y[1])
 
 # for i in xrange(20):
 #     glitch_shift(n, i * 2, x0, y0 + 2 * i + r.randint(-2, 2), x0 + gl_widt + r.randint(-15, 15),
