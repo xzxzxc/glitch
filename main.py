@@ -83,7 +83,7 @@ def coloring_load(sender):
 
 
 def save_action(sender):
-    if sender.superview.name == 'shift':
+    if sender.superview.name == 'shift' or sender.superview.name == 'color':
         v_im = sender.superview['view1']['imageview1'].image
     else:
         v_im = sender.superview['imageview1'].image
@@ -110,6 +110,13 @@ def takePhoto_action(sender):
         return
     if sender.superview.name == 'fuckupcolors':
         sender.superview['fuckUpSlider'].value = 0
+    if sender.superview.name == 'shift':
+        sender.superview['shiftSlider1'].value = 0
+        sender.superview['shiftSlider2'].value = 0
+    if sender.superview.name == 'color':
+        sender.superview['rSlider'].value = 0
+        sender.superview['gSlider'].value = 0
+        sender.superview['bSlider'].value = 0
     sender.superview['imageview1'].image, buff = from_norm_to_ui(ph)
     buff.close()
 
@@ -151,13 +158,13 @@ def shiftSlider_action(sender):
         for i in range(int(intens*100)):
             y = [rn.randint(y0, y0 + gl_heigth - dy)]
             if y[0] - y0 < gl_heigth / 2:
-                dx = int(numpy.sqrt(y0 + gl_heigth - y0) / gl_heigth) * xShift
+                dx = int(numpy.sqrt(gl_heigth*xShift*(y0 + gl_heigth - y[0])/im.size[1]))
             else:
-                dx = int(numpy.sqrt(y[0] - y0) / gl_heigth) * xShift
+                dx = int(numpy.sqrt(gl_heigth*xShift*(y[0] - y0)/im.size[1]))
             x = [rn.randint(x0, x0 + gl_widt) - dx, rn.randint(x0, x0 + gl_widt) - dx]
             y.append(y[0] + dy)
             x.sort()
-            glitch.glitch_shift_left(im_n, -rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
+            glitch.glitch_shift_left(im_n, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
     else:
         for i in range(int(intens*100)):
             y = [rn.randint(y0, y0 + gl_heigth - dy)]
