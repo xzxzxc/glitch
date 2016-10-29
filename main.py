@@ -135,10 +135,10 @@ def shiftSlider_action(sender):
     xShift = int(0.5*im.size[0]*v['shiftSlider2'].value)
     intens = v['shiftSlider1'].value
     region=v['view1']['region']
-    x0 = (int(region.x) + 15)*im.size[0]/v['view1'].width
-    gl_widt = (int(region.width) - 30)*im.size[0]/v['view1'].width
-    y0 = (int(region.y) + 15)*im.size[0]/v['view1'].width
-    gl_heigth = (int(region.height) - 30) *im.size[0]/v['view1'].width
+    x0 = int((region.x + 15)*im.size[0]/v['view1'].width)
+    gl_widt = int((region.width - 30)*im.size[0]/v['view1'].width)
+    y0 = int((region.y + 15)*im.size[1]/v['view1'].height)
+    gl_heigth = int((region.height - 30) *im.size[1]/v['view1'].height)
     dy = int(0.005 * im.size[1])
     if v['dirControl'].selected_index==0:
         for i in range(int(intens*100)):
