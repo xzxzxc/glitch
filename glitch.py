@@ -60,8 +60,8 @@ def glitch_shift_left(self, delta_x, min_x, min_y, max_x, max_y):
     for y in range(min_y, max_y, 1):
         self.paste(buff.getpixel((0, y - min_y)), (min_x-delta_x, y, min_x, y + 1))
 
-def fuck_up_colors(self, n=128):
 
+def fuck_up_colors1(self, n=128):
     def fun(x):
         x = n * ((x + 1) / n)
         if x == 0:
@@ -71,5 +71,9 @@ def fuck_up_colors(self, n=128):
     return self.point(fun)
 
 
-def glitch_one(n=1, ):
-    pass
+def fuck_up_colors2(self, n=2):
+    return self.point(lambda x: x ^ int(n))
+
+
+def fuck_up_colors3(self, n=2):
+    return self.point(lambda x: x | int(n))
