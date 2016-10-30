@@ -6,9 +6,9 @@ class mrRectView(ui.View):
     '''a view that can be moved and resized
     '''
     def __init__(self):
-        region=ui.View(flex='WH',frame=(15,15,self.width-30,self.height-30), background_color='#d2d2d2')
+        region=ui.View(flex='WH',frame=(15,15,self.width-30,self.height-30), background_color='#d2d2d2', name='region')
         region.border_width=1
-        region.border_color='#'
+        region.border_color='black'
         region.alpha=0.3
         self.add_subview(region)
         

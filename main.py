@@ -94,7 +94,7 @@ def fuckUp_load(sender):
     im_n = vMain['imageview1'].image
     v['imageview1'].image = im_n
     im, buff = from_ui_to_norm(im_n)
-    v.present('full_screen', animated=False, hide_title_bar=True)
+    v.present('full_screen', animated=False, hide_title_bar=True, orientations=['portrait'])
 
 
 def shift_load(sender):
@@ -108,7 +108,7 @@ def shift_load(sender):
     im, buff = from_ui_to_norm(im_n)
     rn.seed()
     v['dirControl'].action=shiftSlider_action
-    v.present('full_screen', animated=False, hide_title_bar=True)
+    v.present('full_screen', animated=False, hide_title_bar=True, orientations=['portrait'])
     
     
 def coloring_load(sender):
@@ -120,7 +120,7 @@ def coloring_load(sender):
     im_n = vMain['imageview1'].image
     v['imageview1'].image = im_n
     im, buff = from_ui_to_norm(im_n)
-    v.present('full_screen', animated=False, hide_title_bar=True)
+    v.present('full_screen', animated=False, hide_title_bar=True, orientations=['portrait'])
 
 
 def save_action(sender):
@@ -183,7 +183,7 @@ def fuckUpSlider_action(sender):
 
 
 vMain = ui.load_view('main')
-vMain.present('full_screen', animated=False, hide_title_bar=True)
-vMain['imageview1'].image,buff2=from_norm_to_ui(Image.new('RGB',(100,100),'red'))
+vMain.present('full_screen', animated=False, hide_title_bar=True, orientations=['portrait'])
+#vMain['imageview1'].image,buff2=from_norm_to_ui(Image.new('RGB',(100,100),'red'))
 
 
