@@ -6,8 +6,6 @@ import ui
 import StringIO
 import numpy
 from console import hud_alert
-from copy import deepcopy
-import overlay
 from mrView import mrRectView
 import random as rn
 
@@ -43,12 +41,28 @@ def from_ui_to_norm(ui_im):
     buff=StringIO.StringIO(ui_im.to_png())
     norm_im= Image.open(buff)
     return norm_im, buff
+    
+
+def fuckUpSlider_action(sender):
+    global im
+    v = sender.superview
+    if v['control'].selected_index==0:
+        n = int(200 * numpy.log(1 + v['fuckUpSlider'].value)) + 1
+        im_n = glitch.fuck_up_colors1(im, n)
+    elif v['control'].selected_index==1:
+        n = int(254*v['fuckUpSlider'].value) + 1
+        im_n = glitch.fuck_up_colors2(im, n)
+    else:
+        n = int(254*v['fuckUpSlider'].value) + 1
+        im_n = glitch.fuck_up_colors3(im, n)
+    v['imageview1'].image, buff = from_norm_to_ui(im_n)
+    buff.close()
 
 
 def shiftSlider_action(sender):
     global im
     v = sender.superview
-    xShift = int(0.3*im.size[0]*v['shiftSlider2'].value)
+    xShift = int(0.2*im.size[0]*v['shiftSlider2'].value) + 1
     intens = v['shiftSlider1'].value
     if intens==0.:
         return 
@@ -59,7 +73,7 @@ def shiftSlider_action(sender):
     gl_heigth = int((region.height - 30) *im.size[1]/v['view1'].height)
     dy = int(0.0025 * im.size[1])
     im_n=im.copy()
-    if v['dirControl'].selected_index==0:
+    if v['control'].selected_index==0:
         for i in range(int(intens*300)):
             y = [rn.randint(y0, y0 + gl_heigth - dy)]
             if y[0] - y0 < gl_heigth / 2:
@@ -94,6 +108,7 @@ def fuckUp_load(sender):
     im_n = vMain['imageview1'].image
     v['imageview1'].image = im_n
     im, buff = from_ui_to_norm(im_n)
+    v['control'].action=fuckUpSlider_action
     v.present('full_screen', animated=False, hide_title_bar=True, orientations=['portrait'])
 
 
@@ -107,7 +122,7 @@ def shift_load(sender):
     v['view1']['imageview1'].image = im_n
     im, buff = from_ui_to_norm(im_n)
     rn.seed()
-    v['dirControl'].action=shiftSlider_action
+    v['control'].action=shiftSlider_action
     v.present('full_screen', animated=False, hide_title_bar=True, orientations=['portrait'])
     
     
@@ -170,15 +185,6 @@ def fromLibrary_action(sender):
     if sender.superview.name == 'fuckupcolors':
         sender.superview['fuckUpSlider'].value = 0
     sender.superview['imageview1'].image = ass.get_ui_image()
-
-
-def fuckUpSlider_action(sender):
-    global im
-    v = sender.superview
-    n = int(200 * numpy.log(1 + v['fuckUpSlider'].value)) + 1
-    im_n = glitch.fuck_up_colors(im, n)
-    v['imageview1'].image, buff = from_norm_to_ui(im_n)
-    buff.close()
 
 
 

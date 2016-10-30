@@ -31,14 +31,14 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
-          "title" : "ok",
+          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
           "name" : "save",
           "corner_radius" : 0,
           "border_width" : 0,
           "action" : "save_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
+          "title" : "ok"
         },
         "frame" : "{{6, 30}, {60, 30}}",
         "selected" : false,
@@ -58,7 +58,7 @@
           "uuid" : "718CBD3C-29D9-427C-8693-7BBEA3F63A3E"
         },
         "frame" : "{{6, 528}, {308, 34}}",
-        "selected" : true,
+        "selected" : false,
         "nodes" : [
 
         ]
@@ -86,17 +86,33 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
-          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
+          "title" : "cancel",
           "name" : "cancel",
           "corner_radius" : 0,
           "border_width" : 0,
           "action" : "cancel_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "title" : "cancel"
+          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
         },
         "frame" : "{{246, 30}, {68, 30}}",
         "selected" : false,
+        "nodes" : [
+
+        ]
+      },
+      {
+        "class" : "SegmentedControl",
+        "attributes" : {
+          "class" : "SegmentedControl",
+          "name" : "control",
+          "frame" : "{{100, 270}, {120, 29}}",
+          "uuid" : "75DE5CA6-4B23-4BEE-99F3-F70E9258E04A",
+          "segments" : "🍓|🍈|🍌",
+          "flex" : "LR"
+        },
+        "frame" : "{{101, 28}, {120, 32}}",
+        "selected" : true,
         "nodes" : [
 
         ]
