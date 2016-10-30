@@ -184,6 +184,6 @@ def fuckUpSlider_action(sender):
 
 vMain = ui.load_view('main')
 vMain.present('full_screen', animated=False, hide_title_bar=True)
-#vMain['imageview1'].image,buff2=from_norm_to_ui(Image.new('RGB',(100,100),'red'))
+vMain['imageview1'].image,buff2=from_norm_to_ui(Image.new('RGB',(100,100),'red'))
 
 

@@ -128,7 +128,7 @@
           "frame" : "{{110, 234}, {100, 100}}"
         },
         "frame" : "{{6, 68}, {308, 410}}",
-        "selected" : true,
+        "selected" : false,
         "nodes" : [
           {
             "class" : "ImageView",
@@ -160,28 +160,45 @@
             "frame" : "{{111.5, 138}, {100, 100}}",
             "selected" : true,
             "nodes" : [
-              {
-                "class" : "View",
-                "attributes" : {
-                  "flex" : "WH",
-                  "name" : "view1",
-                  "corner_radius" : 0,
-                  "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
-                  "alpha" : 0.3,
-                  "class" : "View",
-                  "border_width" : 1,
-                  "frame" : "{{0, 0}, {100, 100}}",
-                  "background_color" : "RGBA(0.823113,0.823113,0.823113,1.000000)",
-                  "uuid" : "C034C870-9429-4568-8FB1-67BB3DA4913F"
-                },
-                "frame" : "{{15, 16}, {70, 67}}",
-                "selected" : false,
-                "nodes" : [
 
-                ]
-              }
             ]
           }
+        ]
+      },
+      {
+        "class" : "Label",
+        "attributes" : {
+          "font_size" : 18,
+          "text" : "Int.",
+          "font_name" : "<System>",
+          "name" : "label2",
+          "class" : "Label",
+          "alignment" : "center",
+          "frame" : "{{85, 268}, {150, 32}}",
+          "uuid" : "A271F040-5FEE-4965-8F1E-B9B10CD4FF43"
+        },
+        "frame" : "{{6, 486}, {39, 34}}",
+        "selected" : false,
+        "nodes" : [
+
+        ]
+      },
+      {
+        "class" : "Label",
+        "attributes" : {
+          "font_size" : 18,
+          "text" : "Sh.",
+          "font_name" : "<System>",
+          "name" : "label2",
+          "class" : "Label",
+          "alignment" : "center",
+          "frame" : "{{85, 268}, {150, 32}}",
+          "uuid" : "A271F040-5FEE-4965-8F1E-B9B10CD4FF43"
+        },
+        "frame" : "{{6, 528}, {39, 34}}",
+        "selected" : false,
+        "nodes" : [
+
         ]
       }
     ]
