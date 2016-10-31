@@ -135,6 +135,7 @@ def coloring_load(sender):
     im_n = vMain['imageview1'].image
     v['imageview1'].image = im_n
     im, buff = from_ui_to_norm(im_n)
+    rn.seed()
     v.present('full_screen', animated=False, hide_title_bar=True, orientations=['portrait'])
 
 
