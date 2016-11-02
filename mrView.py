@@ -6,12 +6,17 @@ class mrRectView(ui.View):
     '''a view that can be moved and resized
     '''
     def __init__(self):
-        region=ui.View(flex='WH',frame=(15,15,self.width-30,self.height-30), background_color='#d2d2d2', name='region')
-        region.border_width=1
-        region.border_color='black'
-        region.alpha=0.3
-        self.add_subview(region)
-        
+        region1=ui.View(flex='WH',frame=(15,15,self.width-30,self.height-30), background_color='#d2d2d2', name='region')
+        region1.border_width=1
+        region1.border_color='black'
+        region1.alpha=0.3
+        self.add_subview(region1)
+        region2=ui.View(flex='WH',frame=(16,16,self.width-32,self.height-32), background_color='#d2d2d2', name='region')
+        region2.border_width=1
+        region2.border_color='white'
+        region2.alpha=0.3
+        self.add_subview(region2)
+
         
     def touch_moved(self, touch):
         x,y = touch.location

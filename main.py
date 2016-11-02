@@ -97,6 +97,10 @@ def shiftSlider_action(sender):
             glitch.glitch_shift_right(im_n, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
     v['view1']['imageview1'].image, buff = from_norm_to_ui(im_n)
     buff.close()
+    
+    
+def coloringSlider_action(sender):
+    pass
 
 
 def fuckUp_load(sender):
@@ -133,13 +137,14 @@ def coloring_load(sender):
         return 
     v = ui.load_view('coloring')
     im_n = vMain['imageview1'].image
-    v['imageview1'].image = im_n
+    v['view1']['imageview1'].image = im_n
     im, buff = from_ui_to_norm(im_n)
     rn.seed()
+    v['control'].action=coloringSlider_action
     v.present('full_screen', animated=False, hide_title_bar=True, orientations=['portrait'])
 
 
-def save_action(sender):
+def save_and_exit_action(sender):
     if sender.superview.name == 'shift' or sender.superview.name == 'color':
         v_im = sender.superview['view1']['imageview1'].image
     else:
@@ -150,6 +155,16 @@ def save_action(sender):
     im = None
     buff.close()
     sender.superview.close()
+
+
+def save_action(sender):
+    if sender.superview.name == 'shift' or sender.superview.name == 'color':
+        v_im = sender.superview['view1']['imageview1'].image
+    else:
+        v_im = sender.superview['imageview1'].image
+    global im, buff
+    buff.close()
+    im, buff = from_ui_to_norm(v_im)
 
 
 def saveLibrary_action(sender):

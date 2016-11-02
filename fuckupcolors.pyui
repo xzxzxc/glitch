@@ -21,7 +21,7 @@
           "frame" : "{{100, 200}, {100, 100}}",
           "flex" : "WH"
         },
-        "frame" : "{{6, 68}, {308, 452}}",
+        "frame" : "{{6, 66}, {308, 454}}",
         "selected" : false,
         "nodes" : [
 
@@ -31,17 +31,18 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
+          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
           "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
           "name" : "save",
           "corner_radius" : 0,
           "border_width" : 0,
-          "action" : "save_action",
+          "action" : "save_and_exit_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "title" : "ok"
+          "title" : "◙ʞ"
         },
-        "frame" : "{{6, 30}, {60, 30}}",
-        "selected" : false,
+        "frame" : "{{6, 28}, {49, 30}}",
+        "selected" : true,
         "nodes" : [
 
         ]
@@ -73,7 +74,7 @@
           "class" : "Label",
           "alignment" : "left",
           "frame" : "{{85, 268}, {150, 32}}",
-          "background_color" : "RGBA(0.450000,0.450000,1.000000,1.000000)",
+          "background_color" : "RGBA(0.447059,0.447059,1.000000,1.000000)",
           "uuid" : "9601873C-77A3-4B74-961D-B42080D2147A"
         },
         "frame" : "{{0, 0}, {320, 20}}",
@@ -86,7 +87,8 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
-          "title" : "cancel",
+          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
+          "title" : "ɔ△№Ⓒ∃Ґ",
           "name" : "cancel",
           "corner_radius" : 0,
           "border_width" : 0,
@@ -95,7 +97,7 @@
           "frame" : "{{120, 234}, {80, 32}}",
           "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
         },
-        "frame" : "{{246, 30}, {68, 30}}",
+        "frame" : "{{232, 28}, {82, 30}}",
         "selected" : false,
         "nodes" : [
 
@@ -104,15 +106,40 @@
       {
         "class" : "SegmentedControl",
         "attributes" : {
-          "class" : "SegmentedControl",
+          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
+          "flex" : "LR",
+          "segments" : "☣|☢|☠",
           "name" : "control",
+          "corner_radius" : 5,
+          "border_width" : 1,
+          "border_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "class" : "SegmentedControl",
           "frame" : "{{100, 270}, {120, 29}}",
-          "uuid" : "75DE5CA6-4B23-4BEE-99F3-F70E9258E04A",
-          "segments" : "🍓|🍈|🍌",
-          "flex" : "LR"
+          "uuid" : "75DE5CA6-4B23-4BEE-99F3-F70E9258E04A"
         },
-        "frame" : "{{101, 28}, {120, 32}}",
-        "selected" : true,
+        "frame" : "{{63, 28}, {95, 30}}",
+        "selected" : false,
+        "nodes" : [
+
+        ]
+      },
+      {
+        "class" : "Button",
+        "attributes" : {
+          "font_size" : 12,
+          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
+          "title" : "Ꭶᐄᐁᗴ",
+          "name" : "saveLibrary",
+          "corner_radius" : 5,
+          "border_color" : "RGBA(0.800000,0.815686,0.843137,1.000000)",
+          "action" : "saveLibrary_action",
+          "class" : "Button",
+          "border_width" : 0,
+          "frame" : "{{110, 234}, {80, 32}}",
+          "uuid" : "87673BC2-C7A1-46EE-A06B-054B00C37E24"
+        },
+        "frame" : "{{166, 28}, {58, 30}}",
+        "selected" : false,
         "nodes" : [
 
         ]

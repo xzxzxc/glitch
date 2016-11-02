@@ -13,32 +13,18 @@
     "selected" : false,
     "nodes" : [
       {
-        "class" : "ImageView",
-        "attributes" : {
-          "class" : "ImageView",
-          "name" : "imageview1",
-          "uuid" : "40C39743-77E2-49FE-B8E0-955F0FC4C4D0",
-          "frame" : "{{100, 200}, {100, 100}}",
-          "flex" : "WH"
-        },
-        "frame" : "{{6, 68}, {308, 368}}",
-        "selected" : false,
-        "nodes" : [
-
-        ]
-      },
-      {
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
+          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
           "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
           "name" : "save",
           "corner_radius" : 0,
           "border_width" : 0,
-          "action" : "save_action",
+          "action" : "save_and_exit_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "title" : "ok"
+          "title" : "◙ʞ"
         },
         "frame" : "{{6, 30}, {60, 30}}",
         "selected" : false,
@@ -52,7 +38,7 @@
           "flex" : "W",
           "name" : "bSlider",
           "value" : 0,
-          "action" : "bSlider_action",
+          "action" : "coloringSlider_action",
           "class" : "Slider",
           "frame" : "{{60, 233}, {200, 34}}",
           "uuid" : "718CBD3C-29D9-427C-8693-7BBEA3F63A3E"
@@ -73,7 +59,7 @@
           "class" : "Label",
           "alignment" : "left",
           "frame" : "{{85, 268}, {150, 32}}",
-          "background_color" : "RGBA(0.450000,0.450000,1.000000,1.000000)",
+          "background_color" : "RGBA(0.400000,0.800000,1.000000,1.000000)",
           "uuid" : "9601873C-77A3-4B74-961D-B42080D2147A"
         },
         "frame" : "{{0, 0}, {320, 20}}",
@@ -86,7 +72,8 @@
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
-          "title" : "cancel",
+          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
+          "title" : "ɔ△№Ⓒ∃Ґ",
           "name" : "cancel",
           "corner_radius" : 0,
           "border_width" : 0,
@@ -95,7 +82,7 @@
           "frame" : "{{120, 234}, {80, 32}}",
           "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
         },
-        "frame" : "{{246, 30}, {68, 30}}",
+        "frame" : "{{236, 30}, {78, 30}}",
         "selected" : false,
         "nodes" : [
 
@@ -107,7 +94,7 @@
           "flex" : "W",
           "name" : "gSlider",
           "value" : 0,
-          "action" : "gSlider_action",
+          "action" : "coloringSlider_action",
           "class" : "Slider",
           "frame" : "{{60, 233}, {200, 34}}",
           "uuid" : "718CBD3C-29D9-427C-8693-7BBEA3F63A3E"
@@ -124,7 +111,7 @@
           "flex" : "W",
           "name" : "rSlider",
           "value" : 0,
-          "action" : "rSlider_action",
+          "action" : "coloringSlider_action",
           "class" : "Slider",
           "frame" : "{{60, 233}, {200, 34}}",
           "uuid" : "718CBD3C-29D9-427C-8693-7BBEA3F63A3E"
@@ -139,7 +126,7 @@
         "class" : "Label",
         "attributes" : {
           "font_size" : 18,
-          "text" : "R",
+          "text" : "尺",
           "font_name" : "<System>",
           "name" : "label2",
           "class" : "Label",
@@ -157,7 +144,7 @@
         "class" : "Label",
         "attributes" : {
           "font_size" : 18,
-          "text" : "G",
+          "text" : "₲",
           "font_name" : "<System>",
           "name" : "label2",
           "class" : "Label",
@@ -175,7 +162,7 @@
         "class" : "Label",
         "attributes" : {
           "font_size" : 18,
-          "text" : "B",
+          "text" : "ᗽ",
           "font_name" : "<System>",
           "name" : "label2",
           "class" : "Label",
@@ -184,6 +171,93 @@
           "uuid" : "EAFE503F-7BB8-43B1-A266-74E9C63F22A3"
         },
         "frame" : "{{6, 528}, {34, 34}}",
+        "selected" : false,
+        "nodes" : [
+
+        ]
+      },
+      {
+        "class" : "Button",
+        "attributes" : {
+          "font_size" : 12,
+          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
+          "uuid" : "87673BC2-C7A1-46EE-A06B-054B00C37E24",
+          "name" : "saveLibrary",
+          "corner_radius" : 5,
+          "border_color" : "RGBA(0.800000,0.815686,0.843137,1.000000)",
+          "action" : "saveLibrary_action",
+          "class" : "Button",
+          "border_width" : 0,
+          "frame" : "{{110, 234}, {80, 32}}",
+          "title" : "Ꭶᐄᐁᗴ"
+        },
+        "frame" : "{{176, 30}, {52, 30}}",
+        "selected" : false,
+        "nodes" : [
+
+        ]
+      },
+      {
+        "class" : "View",
+        "attributes" : {
+          "class" : "View",
+          "name" : "view1",
+          "uuid" : "5F0BA1D7-DDD4-4F1A-BA18-5BEF3EF1B4E5",
+          "frame" : "{{110, 234}, {100, 100}}"
+        },
+        "frame" : "{{6, 68}, {308, 368}}",
+        "selected" : false,
+        "nodes" : [
+          {
+            "class" : "ImageView",
+            "attributes" : {
+              "class" : "ImageView",
+              "name" : "imageview1",
+              "uuid" : "40C39743-77E2-49FE-B8E0-955F0FC4C4D0",
+              "frame" : "{{100, 200}, {100, 100}}",
+              "flex" : "WH"
+            },
+            "frame" : "{{0, 0}, {308, 368}}",
+            "selected" : false,
+            "nodes" : [
+
+            ]
+          },
+          {
+            "class" : "View",
+            "attributes" : {
+              "name" : "region",
+              "corner_radius" : 0,
+              "border_width" : 0,
+              "alpha" : 1,
+              "class" : "View",
+              "frame" : "{{110, 234}, {100, 100}}",
+              "custom_class" : "mrRectView",
+              "uuid" : "74C97636-CB5D-4C44-8D6D-96BFEBE220CD"
+            },
+            "frame" : "{{104.5, 126}, {100, 100}}",
+            "selected" : true,
+            "nodes" : [
+
+            ]
+          }
+        ]
+      },
+      {
+        "class" : "SegmentedControl",
+        "attributes" : {
+          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
+          "flex" : "LR",
+          "segments" : "˿|→",
+          "name" : "control",
+          "corner_radius" : 5,
+          "border_width" : 1,
+          "border_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "class" : "SegmentedControl",
+          "frame" : "{{100, 270}, {120, 29}}",
+          "uuid" : "AF8A2446-00DE-4778-BA03-EC4EF7FF4323"
+        },
+        "frame" : "{{74, 30}, {94, 30}}",
         "selected" : false,
         "nodes" : [
 
