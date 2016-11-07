@@ -17,14 +17,14 @@
         "attributes" : {
           "font_size" : 15,
           "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
-          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
+          "title" : "◙ʞ",
           "name" : "save",
           "corner_radius" : 0,
           "border_width" : 0,
           "action" : "save_and_exit_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "title" : "◙ʞ"
+          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
         },
         "frame" : "{{6, 30}, {50, 30}}",
         "selected" : false,
@@ -73,14 +73,14 @@
         "attributes" : {
           "font_size" : 15,
           "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
-          "title" : "ɔ△№Ⓒ∃Ґ",
+          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
           "name" : "cancel",
           "corner_radius" : 0,
           "border_width" : 0,
           "action" : "cancel_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
+          "title" : "ɔ△№Ⓒ∃Ґ"
         },
         "frame" : "{{232, 30}, {82, 30}}",
         "selected" : false,
@@ -103,7 +103,7 @@
           "uuid" : "AF8A2446-00DE-4778-BA03-EC4EF7FF4323"
         },
         "frame" : "{{64, 30}, {94, 30}}",
-        "selected" : true,
+        "selected" : false,
         "nodes" : [
 
         ]
@@ -212,18 +212,18 @@
         "attributes" : {
           "font_size" : 12,
           "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
-          "uuid" : "87673BC2-C7A1-46EE-A06B-054B00C37E24",
+          "title" : "Ꭶᐄᐁᗴ",
           "name" : "saveLibrary",
           "corner_radius" : 5,
           "border_color" : "RGBA(0.800000,0.815686,0.843137,1.000000)",
-          "action" : "saveLibrary_action",
+          "action" : "save_action",
           "class" : "Button",
           "border_width" : 0,
           "frame" : "{{110, 234}, {80, 32}}",
-          "title" : "Ꭶᐄᐁᗴ"
+          "uuid" : "87673BC2-C7A1-46EE-A06B-054B00C37E24"
         },
         "frame" : "{{166, 30}, {58, 30}}",
-        "selected" : false,
+        "selected" : true,
         "nodes" : [
 
         ]

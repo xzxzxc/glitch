@@ -17,14 +17,14 @@
         "attributes" : {
           "font_size" : 15,
           "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
-          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
+          "title" : "◙ʞ",
           "name" : "save",
           "corner_radius" : 0,
           "border_width" : 0,
           "action" : "save_and_exit_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "title" : "◙ʞ"
+          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
         },
         "frame" : "{{6, 30}, {60, 30}}",
         "selected" : false,
@@ -38,7 +38,7 @@
           "flex" : "W",
           "name" : "bSlider",
           "value" : 0,
-          "action" : "coloringSlider_action",
+          "action" : "bSlider_action",
           "class" : "Slider",
           "frame" : "{{60, 233}, {200, 34}}",
           "uuid" : "718CBD3C-29D9-427C-8693-7BBEA3F63A3E"
@@ -73,14 +73,14 @@
         "attributes" : {
           "font_size" : 15,
           "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
-          "title" : "ɔ△№Ⓒ∃Ґ",
+          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B",
           "name" : "cancel",
           "corner_radius" : 0,
           "border_width" : 0,
           "action" : "cancel_action",
           "class" : "Button",
           "frame" : "{{120, 234}, {80, 32}}",
-          "uuid" : "6E6C480D-8B97-4BA3-A337-6ADF70CAD51B"
+          "title" : "ɔ△№Ⓒ∃Ґ"
         },
         "frame" : "{{236, 30}, {78, 30}}",
         "selected" : false,
@@ -94,7 +94,7 @@
           "flex" : "W",
           "name" : "gSlider",
           "value" : 0,
-          "action" : "coloringSlider_action",
+          "action" : "gSlider_action",
           "class" : "Slider",
           "frame" : "{{60, 233}, {200, 34}}",
           "uuid" : "718CBD3C-29D9-427C-8693-7BBEA3F63A3E"
@@ -111,7 +111,7 @@
           "flex" : "W",
           "name" : "rSlider",
           "value" : 0,
-          "action" : "coloringSlider_action",
+          "action" : "rSlider_action",
           "class" : "Slider",
           "frame" : "{{60, 233}, {200, 34}}",
           "uuid" : "718CBD3C-29D9-427C-8693-7BBEA3F63A3E"
@@ -181,15 +181,15 @@
         "attributes" : {
           "font_size" : 12,
           "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
-          "uuid" : "87673BC2-C7A1-46EE-A06B-054B00C37E24",
+          "title" : "Ꭶᐄᐁᗴ",
           "name" : "saveLibrary",
           "corner_radius" : 5,
           "border_color" : "RGBA(0.800000,0.815686,0.843137,1.000000)",
-          "action" : "saveLibrary_action",
+          "action" : "save_action",
           "class" : "Button",
           "border_width" : 0,
           "frame" : "{{110, 234}, {80, 32}}",
-          "title" : "Ꭶᐄᐁᗴ"
+          "uuid" : "87673BC2-C7A1-46EE-A06B-054B00C37E24"
         },
         "frame" : "{{176, 30}, {52, 30}}",
         "selected" : false,
@@ -241,26 +241,6 @@
 
             ]
           }
-        ]
-      },
-      {
-        "class" : "SegmentedControl",
-        "attributes" : {
-          "tint_color" : "RGBA(0.286275,0.286275,0.286275,1.000000)",
-          "flex" : "LR",
-          "segments" : "˿|→",
-          "name" : "control",
-          "corner_radius" : 5,
-          "border_width" : 1,
-          "border_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
-          "class" : "SegmentedControl",
-          "frame" : "{{100, 270}, {120, 29}}",
-          "uuid" : "AF8A2446-00DE-4778-BA03-EC4EF7FF4323"
-        },
-        "frame" : "{{74, 30}, {94, 30}}",
-        "selected" : false,
-        "nodes" : [
-
         ]
       }
     ]

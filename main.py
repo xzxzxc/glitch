@@ -74,7 +74,7 @@ def shiftSlider_action(sender):
     dy = int(0.0025 * im.size[1])
     im_n=im.copy()
     if v['control'].selected_index==0:
-        for i in range(int(intens*300)):
+        for i in xrange(int(intens*300)):
             y = [rn.randint(y0, y0 + gl_heigth - dy)]
             if y[0] - y0 < gl_heigth / 2:
                 dx = int(numpy.sqrt(gl_heigth*xShift*(y[0] - y0)/im.size[1]))
@@ -85,7 +85,7 @@ def shiftSlider_action(sender):
             x.sort()
             glitch.glitch_shift_left(im_n, rn.randint(int(0.75*xShift), xShift), x[0], y[0], x[1], y[1])
     else:
-        for i in range(int(intens*300)):
+        for i in xrange(int(intens*300)):
             y = [rn.randint(y0, y0 + gl_heigth - dy)]
             if y[0] - y0 < gl_heigth / 2:
                 dx = int(numpy.sqrt(gl_heigth*xShift*(y[0] - y0)/im.size[1]))
@@ -99,9 +99,71 @@ def shiftSlider_action(sender):
     buff.close()
     
     
-def coloringSlider_action(sender):
-    pass
+def rSlider_action(sender):
+    global im
+    v = sender.superview
+    r = int(255 * v['rSlider'].value)
+    region=v['view1']['region']
+    x0 = int((region.x + 15)*im.size[0]/v['view1'].width)
+    gl_widt = int((region.width - 30)*im.size[0]/v['view1'].width)
+    y0 = int((region.y + 15)*im.size[1]/v['view1'].height)
+    gl_heigth = int((region.height - 30) *im.size[1]/v['view1'].height)
+    rn.seed()
+    dy = int(0.0025 * im.size[1])
+    im_n=im.copy()
+    for i in xrange(r):
+        y = [rn.randint(y0, y0 + gl_heigth - dy)]
+        x=[rn.randint(x0, x0+gl_widt), rn.randint(x0, x0+gl_widt)]
+        y.append(y[0]+dy)
+        x.sort()
+        glitch.glitch_red(im_n, rn.randint(-50,100), x[0], y[0], x[1], y[1]) 
+    v['view1']['imageview1'].image, buff = from_norm_to_ui(im_n)
+    buff.close()
 
+
+def gSlider_action(sender):
+    global im
+    v = sender.superview
+    g = int(255 * v['rSlider'].value)
+    region=v['view1']['region']
+    x0 = int((region.x + 15)*im.size[0]/v['view1'].width)
+    gl_widt = int((region.width - 30)*im.size[0]/v['view1'].width)
+    y0 = int((region.y + 15)*im.size[1]/v['view1'].height)
+    gl_heigth = int((region.height - 30) *im.size[1]/v['view1'].height)
+    rn.seed()
+    dy = int(0.0025 * im.size[1])
+    im_n=im.copy()
+    for i in xrange(g):
+        y = [rn.randint(y0, y0 + gl_heigth - dy)]
+        x=[rn.randint(x0, x0+gl_widt), rn.randint(x0, x0+gl_widt)]
+        y.append(y[0]+dy)
+        x.sort()
+        glitch.glitch_green(im_n, rn.randint(-50, 100), x[0], y[0], x[1], y[1]) 
+    v['view1']['imageview1'].image, buff = from_norm_to_ui(im_n)
+    buff.close()
+    
+    
+def bSlider_action(sender):
+    global im
+    v = sender.superview
+    b = int(255 * v['rSlider'].value)
+    region=v['view1']['region']
+    x0 = int((region.x + 15)*im.size[0]/v['view1'].width)
+    gl_widt = int((region.width - 30)*im.size[0]/v['view1'].width)
+    y0 = int((region.y + 15)*im.size[1]/v['view1'].height)
+    gl_heigth = int((region.height - 30) *im.size[1]/v['view1'].height)
+    rn.seed()
+    dy = int(0.0025 * im.size[1])
+    im_n=im.copy()
+    for i in xrange(b):
+        y = [rn.randint(y0, y0 + gl_heigth - dy)]
+        x=[rn.randint(x0, x0+gl_widt), rn.randint(x0, x0+gl_widt)]
+        x.sort()
+        y.append(y[0]+dy)
+        glitch.glitch_blue(im_n, rn.randint(-50, 100), x[0], y[0], x[1], y[1]) 
+    v['view1']['imageview1'].image, buff = from_norm_to_ui(im_n)
+    buff.close()
+    
 
 def fuckUp_load(sender):
     global v, vMain, im, buff
@@ -140,12 +202,11 @@ def coloring_load(sender):
     v['view1']['imageview1'].image = im_n
     im, buff = from_ui_to_norm(im_n)
     rn.seed()
-    v['control'].action=coloringSlider_action
     v.present('full_screen', animated=False, hide_title_bar=True, orientations=['portrait'])
 
 
 def save_and_exit_action(sender):
-    if sender.superview.name == 'shift' or sender.superview.name == 'color':
+    if sender.superview.name == 'shift' or sender.superview.name == 'coloring':
         v_im = sender.superview['view1']['imageview1'].image
     else:
         v_im = sender.superview['imageview1'].image
@@ -158,7 +219,7 @@ def save_and_exit_action(sender):
 
 
 def save_action(sender):
-    if sender.superview.name == 'shift' or sender.superview.name == 'color':
+    if sender.superview.name == 'shift' or sender.superview.name == 'coloring':
         v_im = sender.superview['view1']['imageview1'].image
     else:
         v_im = sender.superview['imageview1'].image
